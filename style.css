@@ -1,0 +1,250 @@
+:root {
+    --primary-lavender: #E6E6FA;
+    --dark-lavender: #9B8FBF;
+    --light-lavender: #F0E6FF;
+    --nude: #E6D5C3;
+    --dark-nude: #D4BEA7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--primary-lavender), var(--light-lavender));
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: var(--dark-lavender);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.birthday-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    transform-style: preserve-3d;
+    animation: floatCard 3s ease-in-out infinite;
+}
+
+.message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--dark-lavender);
+    margin-bottom: 1rem;
+}
+
+.sub-message {
+    color: var(--dark-nude);
+    font-size: 1.4rem;
+}
+
+.memory-sections {
+    margin: 4rem 0;
+}
+
+.memory-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.memory-section:hover {
+    transform: translateY(-5px);
+}
+
+.memory-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.media-container {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.memory-media {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.memory-text {
+    flex: 1;
+    padding: 1rem;
+}
+
+.memory-text h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: hsl(270, 35%, 54%);
+    margin-bottom: 1rem;
+}
+
+.memory-text h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.7rem;
+    color: hsl(270, 35%, 54%);
+    margin-bottom: 1rem;
+}
+
+.memory-text p {
+    color: hsl(20, 40%, 66%);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.wishes-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.wish-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.wish-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.wish-card p {
+    color: var(--dark-lavender);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.wish-card pre {
+    color: var(--dark-lavender);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.footer {
+    text-align: center;
+    color: var(--dark-lavender);
+    margin-top: 2rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatCard {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.balloon {
+    width: 30px;
+    height: 40px;
+    background: var(--dark-lavender);
+    border-radius: 50%;
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+    margin: 0 10px;
+}
+
+.balloon:before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: var(--dark-nude);
+}
+
+.balloon-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+    
+    .message {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .memory-section,
+    .memory-section.reverse {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .memory-text {
+        text-align: center;
+    }
+
+    .memory-text h3 {
+        font-size: 1.75rem;
+    }
+}
